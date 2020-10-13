@@ -18,10 +18,11 @@ name = gets.chomp
 my_game = Game.new(name)
 
 def perform (my_game)
-  while my_game.is_still_ongoing?
+  while my_game.is_still_ongoing
     my_game.show_players
     my_game.menu
-    choice = gets.chomp
+    choice = gets.chomp.to_s
+    puts "__________________"
     my_game.menu_choice(choice)
     my_game.enemies_attack
   end
